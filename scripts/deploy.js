@@ -6,18 +6,18 @@ async function main() {
   const whitelistContract = WHITELIST_CONTRACT_ADDRESS;
   const metadataURL = METADATA_URL;
 
-  const cryptoDevsContract = await ethers.getContractFactory("CelestiaNft");
+  const celestiaNftContract = await ethers.getContractFactory("CelestiaNft");
 
-  const deployedCryptoDevsContract = await cryptoDevsContract.deploy(
+  const deployedCelestiaNftContract = await celestiaNftContract.deploy(
     metadataURL,
     whitelistContract
   );
 
-  await deployedCryptoDevsContract.deployed();
+  await deployedCelestiaNftContract.deployed();
 
   console.log(
     "Celestia NFT Contract Address:",
-    deployedCryptoDevsContract.address
+    deployedCelestiaNftContract.address
   );
 }
 
